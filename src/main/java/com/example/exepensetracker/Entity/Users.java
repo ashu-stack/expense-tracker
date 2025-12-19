@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 
 @Entity
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -18,10 +18,10 @@ public class User {
     private String email;
     private String password_hash;
 
-    public User() {
+    public Users() {
     }
 
-    public User(Integer user_id, String user_name, String email, String password_hash) {
+    public Users(Integer user_id, String user_name, String email, String password_hash) {
         this.user_id = user_id;
         this.user_name = user_name;
         this.email = email;
