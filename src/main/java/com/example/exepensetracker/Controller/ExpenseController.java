@@ -14,30 +14,34 @@ public class ExpenseController {
 
     @GetMapping("/get-expenses")
     public List<Expense> getAll(){
-        return null;
+        return expenseService.getAllExpenses();
     }
 
     @GetMapping("/get-by-id/{myId}")
     public Expense getById(@PathVariable Integer myID){
-        return new Expense();
+        return expenseService.getExpenseById(myID);
     }
     //get by last week, month....????
 
     @PostMapping("/add-expense")
     public boolean addExpense(@RequestBody Expense expense){
         // add function
+        expenseService.addExpense(expense);
+
         return true;
     }
 
     @DeleteMapping("delete-by-id/{myId}")
     public boolean deleteById(@PathVariable Integer myId){
         //delete function
+        expenseService.deleteExpenseById(myId);
         return true;
     }
 
     @PutMapping("update-by-id/{myId}")
     public boolean updateById(@PathVariable Integer myId ,@RequestBody Expense expense ){
         //update query by id and set using request body
+        expenseService.updateById(myId,expense);
         return true;
     }
 
