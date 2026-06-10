@@ -1,5 +1,2 @@
 Hi
-my
-name
-is
-Ashu
+my name is Ashutosh
